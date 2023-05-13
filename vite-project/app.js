@@ -1,6 +1,7 @@
-// import "@babylonjs/core/Debug/debugLayer";
-// import "@babylonjs/inspector";
-// import { Engine, Scene, ArcRotateCamera, Vector3, HemisphericLight, MeshBuilder } from "@babylonjs/core";
+import "@babylonjs/core/Debug/debugLayer";
+import "@babylonjs/inspector";
+import { Engine, Scene, ArcRotateCamera, Vector3, HemisphericLight, MeshBuilder } from "@babylonjs/core";
+import * as BABYLON from "@babylonjs/core";
 
 class App {
     constructor() {
@@ -24,9 +25,10 @@ class App {
         camera.attachControl(canvas, true);
         const light1 = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
         // const sphere = MeshBuilder.CreateSphere("sphere", { diameter: 1 }, scene);
-        BABYLON.SceneLoader.Append("./public/textures/pizza", "scene.gltf", scene);
+        // BABYLON.SceneLoader.Append("./public/textures/pizza", "scene.gltf", scene);
         // hide/show the Inspector
         // camera.target = result.meshes[0];
+        const box = BABYLON.CreateBox("box", undefined, undefined);
         window.addEventListener("keydown", (ev) => {
             // Shift+Ctrl+Alt+I
             if (ev.shiftKey && ev.ctrlKey && ev.altKey && ev.keyCode === 73) {
